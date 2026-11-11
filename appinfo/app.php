@@ -1,7 +1,9 @@
 <?php
 use OCA\LdapContacts\AppInfo\Application;
+use OCP\Server;
+use OCP\App\IAppManager;
 
-if (\OC::$server->getAppManager()->isInstalled('user_ldap')) {
+if (Server::get(IAppManager::class)->isInstalled('user_ldap')) {
 	$app = new Application();
 	$app->registerNavigation();
 }
